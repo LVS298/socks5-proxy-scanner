@@ -1,1 +1,20 @@
+cat > config/sources.example.txt << 'EOF'
+# SOCKS5代理源列表
+# 每行一个代理源URL
+# 支持txt格式的直接代理列表，或网页链接
 
+# GitHub上的免费代理源
+https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/socks5.txt
+https://raw.githubusercontent.com/hookzof/socks5_list/master/proxy.txt
+https://raw.githubusercontent.com/ShiftyTR/Proxy-List/master/socks5.txt
+https://raw.githubusercontent.com/proxifly/free-proxy-list/main/proxies/socks5.txt
+
+# 其他公开代理源
+https://www.proxy-list.download/api/v1/get?type=socks5
+https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks5&timeout=10000&country=all
+https://raw.githubusercontent.com/monosans/proxy-list/main/proxies/socks5.txt
+https://raw.githubusercontent.com/mmpx12/proxy-list/master/socks5.txt
+
+# 添加你自己的代理源
+# http://your-custom-source.com/proxies.txt
+EOF
