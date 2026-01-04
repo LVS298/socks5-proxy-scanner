@@ -1,48 +1,60 @@
-mkdir -p config
-cat > config/config.example.yaml << 'EOF'
 # SOCKS5代理扫描器配置示例
-# 请复制此文件为 config.yaml 并修改配置
+# 复制此文件为 config.yaml 并修改
 
 # 扫描配置
 scan:
-  max_workers: 20        # 最大线程数
-  timeout: 5            # 超时时间（秒）
-  mode: "free"          # 扫描模式：free（免费源）, quake（360API）, both（两者）
+  max_workers: 20
+  timeout: 5
+  mode: "free"  # quake, free, both
 
 # 测试源配置（用于验证代理是否能访问内网源）
 test_sources:
-- 长春联通：http://222.161.218.244/PLTV/88888888/224/3221225620/1000010000000060000000014261464_0.smil/index.m3u8?fmt=ts2hls
-- 肇庆移动：http://rrs01.hw.qmcc.net:8088/PLTV/81/224/3221226635/1.m3u8
-- 浙江联通：http://124.90.44.40:6060/010/2/00000001000000600000000000469/1000.m3u8?virtualDomain=010.live_hls.zte.com
-- 浙江移动：http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/888888/224/3221236222/index.m3u8
-- 甘肃移动：http://39.134.32.167:6610/270000001128/9900000501/index.m3u8?channel-id=newtv&Contentid=9900000501&livemode=1
-- 陕西移动: http://39.134.18.196/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226231/index.m3u8
-- 广西移动: http://cdnrrs.gx.chinamobile.com/PLTV/77777777/2243221226324/index.m3u8?servicetype=1
-- 贵州移动: http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226237/1/index.m3u8?fmt=ts2hls
-- 重庆移动: http://39.134.3.73:6610/000000001666/100000000100111201/1.m3u8?channel-id=ystenlive&Contentid=100000000100111201&livemode=1
-- 湖南移动: http://39.134.240.5/PLTV/1/224/3221225628/index.m3u8
-- 江苏移动: http://ott.mobaibox.com/PLTV/3/224/3221227527/index.m3u8
-- 重庆移动: http://39.134.2.22:6610/000000001666/100000000100111074/1.m3u8?IASHttpSessionId=OTT
-- 四川移动: http://live2.rxip.sc96655.com/live/emdy4k_8000.m3u8%3FE%3D1%26U%3D1%26A%3D1%26K%3D1%26P%3D1%26S%3D1
-- 湖南移动2: http://39.134.240.3/PLTV/2/224/3221226134/index.m3u8  
+  - "http://222.161.218.244/PLTV/88888888/224/3221225620/1000010000000060000000014261464_0.smil/index.m3u8?fmt=ts2hls"  # 长春联通
+  - "http://rrs01.hw.qmcc.net:8088/PLTV/81/224/3221226635/1.m3u8"  # 肇庆移动
+  - "http://124.90.44.40:6060/010/2/00000001000000600000000000469/1000.m3u8?virtualDomain=010.live_hls.zte.com"  # 浙江联通
+  - "http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/888888/224/3221236222/index.m3u8"  # 浙江移动
+  - "http://39.134.32.167:6610/270000001128/9900000501/index.m3u8?channel-id=newtv&Contentid=9900000501&livemode=1"  # 甘肃移动
+  - "http://39.134.18.196/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226231/index.m3u8"  # 陕西移动
+  - "http://cdnrrs.gx.chinamobile.com/PLTV/77777777/2243221226324/index.m3u8?servicetype=1"  # 广西移动
+  - "http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226237/1/index.m3u8?fmt=ts2hls"  # 贵州移动
+  - "http://39.134.3.73:6610/000000001666/100000000100111201/1.m3u8?channel-id=ystenlive&Contentid=100000000100111201&livemode=1"  # 重庆移动
+  - "http://39.134.240.5/PLTV/1/224/3221225628/index.m3u8"  # 湖南移动
+  - "http://ott.mobaibox.com/PLTV/3/224/3221227527/index.m3u8"  # 江苏移动
+  - "http://39.134.2.22:6610/000000001666/100000000100111074/1.m3u8?IASHttpSessionId=OTT"  # 重庆移动
+  - "http://live2.rxip.sc96655.com/live/emdy4k_8000.m3u8%3FE%3D1%26U%3D1%26A%3D1%26K%3D1%26P%3D1%26S%3D1"  # 四川移动
+  - "http://39.134.240.3/PLTV/2/224/3221226134/index.m3u8"  # 湖南移动2
 
 # 省份列表（用于分类和显示）
 provinces:
-  - "北京"
-  - "上海"
+  - "湖南"
+  - "湖北"
   - "广东"
-  - "浙江"
+  - "江西"
   - "江苏"
-  - "山东"
+  - "浙江"
+  - "安徽"
   - "河南"
   - "四川"
   - "河北"
-  - "湖南"
-  - "湖北"
-  - "福建"
-  - "陕西"
-  - "安徽"
+  - "山西"
   - "辽宁"
+  - "福建"
+  - "山东"
+  - "广西"
+  - "北京"
+  - "天津"
+  - "上海"
+  - "重庆"
+  - "贵州"
+  - "云南"
+  - "陕西"
+  - "海南"
+  - "吉林"
+  - "黑龙江"
+  - "甘肃"
+  - "青海"
+  - "内蒙古"
+  - "宁夏回族自治区"
 
 # 运营商列表
 operators:
@@ -60,8 +72,7 @@ output:
 # 日志配置
 logging:
   level: "INFO"          # 日志级别：DEBUG, INFO, WARNING, ERROR
-  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-  # file: "scanner.log"  # 日志文件（取消注释启用）
+  file: "scanner.log"    # 日志文件路径
 
 # 高级配置
 advanced:
@@ -69,4 +80,3 @@ advanced:
   batch_size: 50         # 批量处理大小
   connect_timeout: 10    # 连接超时（秒）
   read_timeout: 15       # 读取超时（秒）
-EOF
