@@ -11,10 +11,20 @@ scan:
 
 # 测试源配置（用于验证代理是否能访问内网源）
 test_sources:
-  - "http://example1.com/live.m3u8"    # 示例源1，请替换为你的内网源
-  - "http://example2.com/stream.m3u8"   # 示例源2，请替换为你的内网源
-  # 添加更多测试源...
-  # - "http://your-source.com/live.m3u8"
+- 长春联通：http://222.161.218.244/PLTV/88888888/224/3221225620/1000010000000060000000014261464_0.smil/index.m3u8?fmt=ts2hls
+- 肇庆移动：http://rrs01.hw.qmcc.net:8088/PLTV/81/224/3221226635/1.m3u8
+- 浙江联通：http://124.90.44.40:6060/010/2/00000001000000600000000000469/1000.m3u8?virtualDomain=010.live_hls.zte.com
+- 浙江移动：http://hwltc.tv.cdn.zj.chinamobile.com/PLTV/888888/224/3221236222/index.m3u8
+- 甘肃移动：http://39.134.32.167:6610/270000001128/9900000501/index.m3u8?channel-id=newtv&Contentid=9900000501&livemode=1
+- 陕西移动: http://39.134.18.196/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226231/index.m3u8
+- 广西移动: http://cdnrrs.gx.chinamobile.com/PLTV/77777777/2243221226324/index.m3u8?servicetype=1
+- 贵州移动: http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226237/1/index.m3u8?fmt=ts2hls
+- 重庆移动: http://39.134.3.73:6610/000000001666/100000000100111201/1.m3u8?channel-id=ystenlive&Contentid=100000000100111201&livemode=1
+- 湖南移动: http://39.134.240.5/PLTV/1/224/3221225628/index.m3u8
+- 江苏移动: http://ott.mobaibox.com/PLTV/3/224/3221227527/index.m3u8
+- 重庆移动: http://39.134.2.22:6610/000000001666/100000000100111074/1.m3u8?IASHttpSessionId=OTT
+- 四川移动: http://live2.rxip.sc96655.com/live/emdy4k_8000.m3u8%3FE%3D1%26U%3D1%26A%3D1%26K%3D1%26P%3D1%26S%3D1
+- 湖南移动2: http://39.134.240.3/PLTV/2/224/3221226134/index.m3u8  
 
 # 省份列表（用于分类和显示）
 provinces:
