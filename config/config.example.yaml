@@ -1,0 +1,38 @@
+# SOCKS5代理扫描器配置示例
+# 复制此文件为 config.yaml 并修改
+
+# 扫描配置
+scan:
+  max_workers: 20
+  timeout: 5
+  mode: "free"  # quake, free, both
+  
+# 测试源配置
+test_sources:
+  - "http://example.com/test1.m3u8"
+  - "http://example.com/test2.m3u8"
+
+# 省份列表（可选）
+provinces:
+  - "北京"
+  - "上海"
+  - "广东"
+  - "浙江"
+  - "江苏"
+
+# 运营商列表（可选）
+operators:
+  - "中国移动"
+  - "中国电信"
+  - "中国联通"
+
+# 输出配置
+output:
+  directory: "./results"
+  save_json: true
+  save_txt: true
+  
+# 日志配置
+logging:
+  level: "INFO"
+  file: "scanner.log"
