@@ -1,26 +1,40 @@
+mkdir -p config
+cat > config/config.example.yaml << 'EOF'
 # SOCKS5代理扫描器配置示例
-# 复制此文件为 config.yaml 并修改
+# 请复制此文件为 config.yaml 并修改配置
 
 # 扫描配置
 scan:
-  max_workers: 20
-  timeout: 5
-  mode: "free"  # quake, free, both
-  
-# 测试源配置
-test_sources:
-  - "http://example.com/test1.m3u8"
-  - "http://example.com/test2.m3u8"
+  max_workers: 20        # 最大线程数
+  timeout: 5            # 超时时间（秒）
+  mode: "free"          # 扫描模式：free（免费源）, quake（360API）, both（两者）
 
-# 省份列表（可选）
+# 测试源配置（用于验证代理是否能访问内网源）
+test_sources:
+  - "http://example1.com/live.m3u8"    # 示例源1，请替换为你的内网源
+  - "http://example2.com/stream.m3u8"   # 示例源2，请替换为你的内网源
+  # 添加更多测试源...
+  # - "http://your-source.com/live.m3u8"
+
+# 省份列表（用于分类和显示）
 provinces:
   - "北京"
   - "上海"
   - "广东"
   - "浙江"
   - "江苏"
+  - "山东"
+  - "河南"
+  - "四川"
+  - "河北"
+  - "湖南"
+  - "湖北"
+  - "福建"
+  - "陕西"
+  - "安徽"
+  - "辽宁"
 
-# 运营商列表（可选）
+# 运营商列表
 operators:
   - "中国移动"
   - "中国电信"
@@ -28,11 +42,21 @@ operators:
 
 # 输出配置
 output:
-  directory: "./results"
-  save_json: true
-  save_txt: true
-  
+  directory: "./results"   # 输出目录
+  save_json: true         # 是否保存JSON格式
+  save_txt: true          # 是否保存TXT格式
+  timestamp_format: "%Y%m%d_%H%M%S"  # 时间戳格式
+
 # 日志配置
 logging:
-  level: "INFO"
-  file: "scanner.log"
+  level: "INFO"          # 日志级别：DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  # file: "scanner.log"  # 日志文件（取消注释启用）
+
+# 高级配置
+advanced:
+  max_retries: 3         # 最大重试次数
+  batch_size: 50         # 批量处理大小
+  connect_timeout: 10    # 连接超时（秒）
+  read_timeout: 15       # 读取超时（秒）
+EOF
